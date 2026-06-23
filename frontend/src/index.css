@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+@theme {
+  /* optional custom styling */
+}
+
+[data-theme="black"] {
+  --p: 29 155 240; /* primary */
+}
