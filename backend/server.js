@@ -1,3 +1,4 @@
+import cors from "cors";
 import path from "path";
 import express from "express"; //(1)
 import dotenv from "dotenv"; //(6)
@@ -29,6 +30,16 @@ app.use(express.json({limit: "5mb"})); //should not be too large to prevent DOS
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
+
+app.use(
+	cors({
+		origin: [
+			"http://localhost:3000",
+			"https://your-frontend-domain.vercel.app",
+		],
+		credentials: true,
+	})
+);
 
 app.use("/api/auth",authRoutes);  //(5)
 app.use("/api/users",userRoutes); 
