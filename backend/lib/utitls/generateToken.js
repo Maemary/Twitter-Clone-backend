@@ -11,4 +11,5 @@ export const generateTokenAndSetCookie = (userId,res) => {
          sameSite: "none",  // ← changed from "strict"
         secure: true,  
     });
+    return token; 
 };

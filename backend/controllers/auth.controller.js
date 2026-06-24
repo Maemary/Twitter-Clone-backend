@@ -49,6 +49,7 @@ export const signup = async (req, res) =>{
             following: newUser.following,
             profileImg: newUser.profileImg,
             coverImg: newUser.coverImg,
+            token,
         })
     }else{
         res.status(400).json({ error: "Invalid User data"});
@@ -83,6 +84,7 @@ export const login = async (req, res) =>{
             following: user.following,
             profileImg: user.profileImg,
             coverImg: user.coverImg,
+            token,
         })
     
     } catch(error){
