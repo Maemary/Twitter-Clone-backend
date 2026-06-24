@@ -6,7 +6,8 @@ import jwt from "jsonwebtoken";
 export const protectRoute = async (req, res, next) => {
 	 console.log(" Middleware Triggered! ---");    
 	try {
-		
+		let token = req.cookies.jwt;
+
 		const token = req.cookies.jwt;
 		if (!token) {
 			return res.status(401).json({ error: "Unauthorized: No Token Provided" });
