@@ -35,8 +35,9 @@ app.use(
 	cors({
 		origin: [
 			"http://localhost:3000",
-			"twitter-clone-frontend-dssbn2gu0-mariams-projects-9f909f57.vercel.app",
+			"https://twitter-clone-frontend-alpha-six.vercel.app",
 		],
+        origin:true,
 		credentials: true,
 	})
 );
