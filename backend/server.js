@@ -37,7 +37,7 @@ app.use(
 			"http://localhost:3000",
 			"https://twitter-clone-frontend-alpha-six.vercel.app",
 		],
-        origin:true,
+       
 		credentials: true,
 	})
 );
