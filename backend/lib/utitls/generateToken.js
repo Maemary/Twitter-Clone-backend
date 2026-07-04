@@ -5,11 +5,11 @@ export const generateTokenAndSetCookie = (userId,res) => {
         expiresIn: '15d'
     })
 
-    res.cookie("jwt",token,{
-        maxAge: 15*24*60*60*1000, //MS
-        httpOnly: true,  //Prevent XXS attacks cross-site scripting attcks
-         sameSite: "none",  // ← changed from "strict"
-        secure: true,  
-    });
+   res.cookie("jwt", token, {
+    maxAge: 15 * 24 * 60 * 60 * 1000,
+    httpOnly: true,
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+    secure: process.env.NODE_ENV === "production",
+});
    
 };
