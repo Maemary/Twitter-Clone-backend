@@ -31,9 +31,21 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
+const allowedOrigins = [
+	"https://twitter-clone-frontend-alpha-six.vercel.app",
+	"http://localhost:3000",
+	"http://localhost:3001",
+];
+
 app.use(
 	cors({
-		origin: "https://twitter-clone-frontend-alpha-six.vercel.app/login",
+		origin: function (origin, callback) {
+			if (!origin || allowedOrigins.includes(origin)) {
+				callback(null, true);
+			} else {
+				callback(new Error("Not allowed by CORS"));
+			}
+		},
 		credentials: true,
 	})
 );
