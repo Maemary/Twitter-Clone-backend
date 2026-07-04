@@ -33,7 +33,7 @@ app.use(cookieParser());
 
 app.use(
 	cors({
-		origin: true,
+		origin: "https://twitter-clone-frontend-alpha-six.vercel.app/login",
 		credentials: true,
 	})
 );
